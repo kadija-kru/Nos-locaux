@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "nos-locaux-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/nosLocaux/NosLocauxWebPart.js",
+          "manifest": "./src/webparts/nosLocaux/NosLocauxWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "NosLocauxWebPartStrings": "lib/webparts/nosLocaux/loc/{locale}.js"
+  }
+}

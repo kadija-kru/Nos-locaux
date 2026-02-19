@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "nos-locaux-client-side-solution",
+    "id": "b4e9f6d2-3c1a-4f8e-9d7b-2a5c6e8f0123",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "WebPart pour afficher et gérer les localisations de bureaux"
+      },
+      "longDescription": {
+        "default": "WebPart SPFx permettant d'afficher et gérer dynamiquement une liste de localisations de bureaux avec navigation vers Google Maps"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "c7e9f6d2-3c1a-4f8e-9d7b-2a5c6e8f0456",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/nos-locaux.sppkg"
+  }
+}
