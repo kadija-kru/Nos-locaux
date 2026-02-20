@@ -19,7 +19,8 @@
       "./node_modules/@microsoft"
     ],
     "types": [
-      "es6-promise"
+      "es6-promise",
+      "node"
     ],
     "lib": [
       "es5",
