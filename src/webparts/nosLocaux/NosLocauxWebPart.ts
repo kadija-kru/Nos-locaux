@@ -30,6 +30,9 @@ export default class NosLocauxWebPart extends BaseClientSideWebPart<INosLocauxWe
       ? this.properties.locations
       : this._getDefaultLocations();
 
+    // La vue design affiche uniquement la liste en lecture seule.
+    // Toute modification (ajout, modifier, supprimer) se fait exclusivement
+    // via le panneau "Modifier le composant WebPart" (propriétés du WebPart).
     const element: React.ReactElement = React.createElement(
       LocationList,
       {
@@ -105,6 +108,7 @@ export default class NosLocauxWebPart extends BaseClientSideWebPart<INosLocauxWe
                           onLocationsChanged: (updatedLocations: ILocation[]) => {
                             this.properties.locations = updatedLocations;
                             this.render();
+                            this.context.propertyPane.refresh();
                           }
                         }
                       );
