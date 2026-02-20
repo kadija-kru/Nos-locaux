@@ -1,15 +1,18 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version, DisplayMode } from '@microsoft/sp-core-library';
+import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  IPropertyPaneCustomFieldProps,
+  IPropertyPaneField,
+  PropertyPaneFieldType
 } from '@microsoft/sp-webpart-base';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'NosLocauxWebPartStrings';
 import LocationList from './components/LocationList';
 import { ILocation } from './components/LocationList';
+import LocationManager from './components/LocationManager';
 
 // Interface des propriétés du WebPart
 export interface INosLocauxWebPartProps {
@@ -30,11 +33,7 @@ export default class NosLocauxWebPart extends BaseClientSideWebPart<INosLocauxWe
     const element: React.ReactElement = React.createElement(
       LocationList,
       {
-        locations: locations,
-        onLocationsChanged: (updatedLocations: ILocation[]) => {
-          this.properties.locations = updatedLocations;
-        },
-        isEditMode: this.displayMode === DisplayMode.Edit
+        locations: locations
       }
     );
 
@@ -89,9 +88,33 @@ export default class NosLocauxWebPart extends BaseClientSideWebPart<INosLocauxWe
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
+                {
+                  type: PropertyPaneFieldType.Custom,
+                  targetProperty: 'locations',
+                  properties: {
+                    key: 'locationManager',
+                    onRender: (elem: HTMLElement) => {
+                      const locations: ILocation[] = this.properties.locations && this.properties.locations.length > 0
+                        ? this.properties.locations
+                        : this._getDefaultLocations();
+
+                      const managerElement = React.createElement(
+                        LocationManager,
+                        {
+                          locations: locations,
+                          onLocationsChanged: (updatedLocations: ILocation[]) => {
+                            this.properties.locations = updatedLocations;
+                            this.render();
+                          }
+                        }
+                      );
+                      ReactDom.render(managerElement, elem);
+                    },
+                    onDispose: (elem: HTMLElement) => {
+                      ReactDom.unmountComponentAtNode(elem);
+                    }
+                  } as IPropertyPaneCustomFieldProps
+                } as IPropertyPaneField<IPropertyPaneCustomFieldProps>
               ]
             }
           ]

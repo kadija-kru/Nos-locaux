@@ -23,7 +23,9 @@ const styles = {
   saveButton: 'saveButton_4c0ba3e9',
   cancelButton: 'cancelButton_4c0ba3e9',
   errorText: 'errorText_4c0ba3e9',
-  container: 'container_4c0ba3e9'
+  container: 'container_4c0ba3e9',
+  managerItem: 'managerItem_4c0ba3e9',
+  managerItemName: 'managerItemName_4c0ba3e9'
 };
 
 export default styles;
