@@ -1,3 +1,7 @@
+/* -------------------------------------------------------
+ * Styles de la vue principale du WebPart (lecture seule)
+ * Utilisés par LocationList et LocationCard uniquement
+ * ------------------------------------------------------- */
 .nosLocaux {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 16px;
@@ -88,176 +92,183 @@
     color: #555555;
   }
 
-  .editControls {
-    display: flex;
-    gap: 6px;
-    margin-left: 8px;
-    flex-shrink: 0;
-  }
-
-  .managerItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    background-color: #ffffff;
-  }
-
-  .managerItemName {
-    font-size: 13px;
-    font-weight: 600;
-    color: #333333;
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .editButton {
-    background: none;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 12px;
-    cursor: pointer;
-    color: #555555;
-    transition: background-color 0.1s ease;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.08);
-    }
-  }
-
-  .deleteButton {
-    background: none;
-    border: 1px solid rgba(196, 30, 90, 0.4);
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 12px;
-    cursor: pointer;
-    color: #c41e5a;
-    transition: background-color 0.1s ease;
-
-    &:hover {
-      background-color: rgba(196, 30, 90, 0.08);
-    }
-  }
-
-  .addButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
-    padding: 10px 20px;
-    background-color: #0047ab;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-    width: 100%;
-
-    &:hover {
-      background-color: #003380;
-    }
-  }
-
-  .formContainer {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 12px;
-  }
-
-  .formTitle {
-    font-size: 16px;
-    font-weight: 700;
-    color: #333333;
-    margin-bottom: 16px;
-  }
-
-  .formField {
-    margin-bottom: 14px;
-
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #444444;
-      margin-bottom: 4px;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #cccccc;
-      border-radius: 6px;
-      font-size: 14px;
-      color: #333333;
-      box-sizing: border-box;
-      transition: border-color 0.1s ease;
-
-      &:focus {
-        outline: none;
-        border-color: #0047ab;
-        box-shadow: 0 0 0 2px rgba(0, 71, 171, 0.15);
-      }
-    }
-  }
-
-  .formActions {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 16px;
-  }
-
-  .saveButton {
-    padding: 8px 18px;
-    background-color: #0047ab;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-
-    &:hover {
-      background-color: #003380;
-    }
-  }
-
-  .cancelButton {
-    padding: 8px 18px;
-    background-color: #ffffff;
-    color: #555555;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
-
-    &:hover {
-      background-color: #f0f0f0;
-    }
-  }
-
-  .errorText {
-    color: #c41e5a;
-    font-size: 12px;
-    margin-top: 3px;
-  }
-
   .container {
     width: 100%;
   }
+}
+
+/* -------------------------------------------------------
+ * Styles du panneau de propriétés (modifier le composant WebPart)
+ * Utilisés par LocationManager et LocationForm uniquement
+ * Ces styles s'appliquent exclusivement dans le panneau
+ * de configuration — jamais dans la vue design principale
+ * ------------------------------------------------------- */
+
+.managerItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background-color: #ffffff;
+}
+
+.managerItemName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editControls {
+  display: flex;
+  gap: 6px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.editButton {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #555555;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.deleteButton {
+  background: none;
+  border: 1px solid rgba(196, 30, 90, 0.4);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #c41e5a;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: rgba(196, 30, 90, 0.08);
+  }
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #0047ab;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  width: 100%;
+
+  &:hover {
+    background-color: #003380;
+  }
+}
+
+.formContainer {
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 12px;
+}
+
+.formTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+.formField {
+  margin-bottom: 14px;
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 4px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333333;
+    box-sizing: border-box;
+    transition: border-color 0.1s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #0047ab;
+      box-shadow: 0 0 0 2px rgba(0, 71, 171, 0.15);
+    }
+  }
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.saveButton {
+  padding: 8px 18px;
+  background-color: #0047ab;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: #003380;
+  }
+}
+
+.cancelButton {
+  padding: 8px 18px;
+  background-color: #ffffff;
+  color: #555555;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.errorText {
+  color: #c41e5a;
+  font-size: 12px;
+  margin-top: 3px;
 }
