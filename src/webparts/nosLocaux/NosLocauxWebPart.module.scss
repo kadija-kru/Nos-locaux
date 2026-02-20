@@ -95,6 +95,28 @@
     flex-shrink: 0;
   }
 
+  .managerItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    background-color: #ffffff;
+  }
+
+  .managerItemName {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .editButton {
     background: none;
     border: 1px solid rgba(0, 0, 0, 0.2);

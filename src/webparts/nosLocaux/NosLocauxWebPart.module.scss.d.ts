@@ -23,6 +23,8 @@ declare const styles: {
   readonly saveButton: string;
   readonly cancelButton: string;
   readonly errorText: string;
+  readonly managerItem: string;
+  readonly managerItemName: string;
 };
 
 export default styles;
